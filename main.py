@@ -27,7 +27,7 @@ class ExpenseApp(QWidget):
         self.table.setColumnCount(5)  # Id, date, category, amount, description
         self.table.setHorizontalHeaderLabels(['Id', 'Date', 'Category', 'Amount', 'Description'])
         self.table.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
-        self.table.sortByColumn(1, Qt.DescendingOrder)
+        #self.table.sortByColumn(1, Qt.DescendingOrder)
 
         # Design App with Layouts
 
@@ -35,35 +35,35 @@ class ExpenseApp(QWidget):
 
         self.setStyleSheet("""
                             QWidget {
-                                    background-color: #b8c9e1;
+                                    background-color: #ecf0f1;
                                     }
                             QLabel {
-                                    color: #333
+                                    color: #6A5ACD;
                                     font-size: 14px;
                                     }
-                                    
-                            QlineEdit, QComboBox, QDateEdit, QPushButton{
-                                    background-color: #b8c9e1;
-                                    color: #333;
+
+                            QLineEdit, QComboBox, QDateEdit, QPushButton {
+                                    background-color: #6A5ACD;
+                                    color: #ecf0f1;
                                     border: 1px solid #444;
                                     padding: 5px;
                                     }
-                                    
-                            QTableWidget{
-                                    background-color: #b8c9e1;
-                                    color: #333;
+
+                            QTableWidget {
+                                    background-color: #ffffff; 
+                                    color: #6A5ACD;
                                     border: 1px solid #444;
                                     selection-background-color: #ddd;    
                                     }
-                            QPushButton{
-                                    background-color: #4caf50;
-                                    color: #fff;
+                            QPushButton {
+                                    background-color:  #6A5ACD;
+                                    color: #f39c12;
                                     border: none;
                                     padding: 8px 16px;
                                     font-size:14px;
                                     }
-                            QPushButton:hover{
-                                    background-color: #45a049;
+                            QPushButton:hover {
+                                    background-color: #3498db;
                                     }
                             """)
 
@@ -96,6 +96,8 @@ class ExpenseApp(QWidget):
         self.setLayout(self.master_layout)
 
         self.load_table()
+
+        self.table.sortByColumn(1, Qt.DescendingOrder)
 
     def load_table(self):
         self.table.setRowCount(0)
